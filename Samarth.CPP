@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string> // Needed to use strings
-#include <cstdlib> // Needed to use random numbers
+#include <string> 
+#include <cstdlib> 
 #include <ctime>
 #include<conio.h>
 using namespace std;
@@ -11,14 +11,13 @@ void rules();
 int main()
 {
     string playerName;
-    int amount; // hold player's balance amount
+    int amount; 
     int bettingAmount; 
     int guess;
-    int dice; // hold computer generated number
+    int dice; 
     char choice;
  
-    srand(time(0)); // "Seed" the random generator
-
+    srand(time(0)); 
     drawLine(60,'_');
     cout << "\n\n\n\t\tCASINO GAME\n\n\n\n";
     drawLine(60,'_');
@@ -35,7 +34,7 @@ int main()
         rules();
         cout << "\n\nYour current balance is $ " << amount << "\n";
 		
-		// Get player's betting amount
+		
         do
         {
             cout <<playerName<<", enter money to bet : $";
@@ -45,7 +44,7 @@ int main()
                        <<"\nRe-enter data\n ";
         }while(bettingAmount > amount);
  
-		// Get player's numbers
+		
         do
         {
             cout << "Guess your number to bet between 1 to 10 :";
@@ -55,7 +54,7 @@ int main()
                     <<"\nRe-enter data\n ";
         }while(guess <= 0 || guess > 10);
  
-        dice = rand()%10 + 1; // Will hold the randomly generated integer between 1 and 10
+        dice = rand()%10 + 1;
     
         if(dice == guess)
         {
@@ -86,20 +85,19 @@ int main()
     getch();
     return 0;
 
-
-
 }
  
+
 void drawLine(int n, char symbol)
 {
     for(int i=0; i<n; i++)
         cout << symbol;
     cout << "\n" ;
 }
- 
+
+
 void rules()
 {
-   // system("cls");
     cout << "\n\n";
     drawLine(80,'-');
     cout << "\t\tRULES OF THE GAME\n";
